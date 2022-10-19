@@ -29,8 +29,7 @@ export default {
           TechyWrite
         </h1>
       </section>
-      <a class="github-corner" href="https://github.com/ashutoshkrris/TechyWrite" target="_blank"
-        rel="noopener">
+      <a class="github-corner" href="https://github.com/ashutoshkrris/TechyWrite" target="_blank" rel="noopener">
         <GitHubSVG />
       </a>
       <!-- toggle -->
@@ -55,50 +54,55 @@ export default {
         <li v-for="opportunity in opportunitiesData" :key="opportunity.link" class="p-3 w-full h-full">
           <a :href="opportunity.link" target="_blank" rel="noopener">
             <div class="shadow-lg hover:shadow-xl">
-              <div class="flex rounded-lg h-full bg-gray-800 bg-opacity-30 p-8 flex-col hover:bg-opacity-50">
+              <div class="flex rounded-lg h-full bg-gray-800 bg-opacity-30 p-8 flex-col hover:bg-opacity-50" style="position:relative">
+                <h2 class="flex rounded-lg" style="padding: 0.3em;rem ;position: absolute; color: black; background-color:white ;top:10px;right:10px ">{{opportunity.publication}}</h2>
                 <div class="flex items-center mb-3">
                   <a class="text-3xl font-semibold text-white" :href="opportunity.link" target="_blank"
                     rel="noopener">{{ opportunity.name }}</a>
+                    
                 </div>
                 <div class="flex flex-wrap justify-start mb-2">
                   <h2 class="pr-2 text-psybeam">Description:</h2>
                   <h3 class="text-white">{{ opportunity.description }}</h3>
+                  
                 </div>
 
+                +
                 <div v-if="opportunity.rate" class="flex flex-wrap justify-start mb-2">
                   <h2 class="pr-2 text-psybeam">Rate:</h2>
                   <h3 class="text-white">{{ opportunity.rate }}</h3>
-                </div>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-      <!-- footer -->
-      <footer>
-        <div class="px-4 py-4 mx-auto max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
-          <div class="flex justify-center space-x-6 md:order-2">
-            <a href="https://twitter.com/ashutoshkrris" class="text-gray-400 hover:text-white" target="_blank"
-              rel="noopener">
-              <span class="sr-only">Twitter</span>
-              <Twitter />
-            </a>
+                  <div class="flex flex-row" style="position: absolute;right:10px;bottom:10px"><li v-for="i in opportunity.categories" v-bind:key="i" ><span class="bg-green-800 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5  dark:bg-green-700 dark:text-green-100 flex rounded-lg">{{i}}</span></li></div>
+  </div>
+  </div>
+  </div>
+  </a>
+  </li>
+  </ul>
+  <!-- footer -->
+  <footer>
+    <div class="px-4 py-4 mx-auto max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+      <div class="flex justify-center space-x-6 md:order-2">
+        <a href="https://twitter.com/ashutoshkrris" class="text-gray-400 hover:text-white" target="_blank"
+          rel="noopener">
+          <span class="sr-only">Twitter</span>
+          <Twitter />
+        </a>
 
-            <a href="https://github.com/ashutoshkrris" class="text-gray-400 hover:text-white" target="_blank"
-              rel="noopener">
-              <span class="sr-only">GitHub</span>
-              <GitHub />
-            </a>
-          </div>
-          <div class="mt-8 md:mt-0 md:order-1">
-            <p class="text-sm text-center text-gray-400">
-              &copy; {{ new Date().getFullYear() }} Made with ❤️ by Ashutosh
-              Krishna
-            </p>
-          </div>
-        </div>
-      </footer>
-    </section>
+        <a href="https://github.com/ashutoshkrris" class="text-gray-400 hover:text-white" target="_blank"
+          rel="noopener">
+          <span class="sr-only">GitHub</span>
+          <GitHub />
+        </a>
+      </div>
+      <div class="mt-8 md:mt-0 md:order-1">
+        <p class="text-sm text-center text-gray-400">
+          &copy; {{ new Date().getFullYear() }} Made with ❤️ by Ashutosh
+          Krishna
+        </p>
+      </div>
+    </div>
+  </footer>
+  </section>
   </div>
 </template>
   
